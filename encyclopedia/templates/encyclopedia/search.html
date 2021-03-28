@@ -7,10 +7,9 @@
 {% block body %}
 
     <ul>
-        {% for entry in entries %}
+
 {#          #}
             <li >  <a href="{% url 'detail' entry %}">{{ entry }}</a> </li>
-        {% endfor %}
     </ul>
 
 

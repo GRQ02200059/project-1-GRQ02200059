@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    修改词条
+{% endblock %}
+
+{% block body %}
+<form  action="{% url 'edited' edited entry %}">
+<input type="text" name="edited" placeholder="{{ html }}" style="width:400px; height:400px;" id ="te">
+<input type="submit" class="btn btn-primary btn-cube"  >
+
+</form>
+{% endblock %}

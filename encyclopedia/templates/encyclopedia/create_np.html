@@ -1,0 +1,28 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create new page
+{% endblock %}
+
+{% block body %}
+<form method="post" action="{% url 'get_np' %}">
+
+          <input type="text" name="entry" size="40"  placeholder="条目名称">
+          <input type="text" name="context" size="100" placeholder="内容">
+
+
+    <br>
+
+<input id="btnSubmit" class="btn btn-primary btn-cube"
+                            type="submit" value="保 存"  />
+
+</form>
+{##}
+{#    <ul>#}
+{#        {% for entry in entries %}#}
+{#            <li>{{ entry }}</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+
+
+{% endblock %}
