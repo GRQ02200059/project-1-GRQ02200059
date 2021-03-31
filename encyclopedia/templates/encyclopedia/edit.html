@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block body %}
-<form  action="{% url 'edited' edited entry %}">
-<input type="text" name="edited" placeholder="{{ html }}" style="width:400px; height:400px;" id ="te">
+<form  method="post" action="{% url 'edited' entry %}">
+<input type="text" name="edited" placeholder="{{ html|safe }}" style="width:1000px; height:700px;" id ="te">
 <input type="submit" class="btn btn-primary btn-cube"  >
 
 </form>

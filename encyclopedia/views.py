@@ -56,12 +56,17 @@ def random(request):
     with open("hhh.html", "w+")as f:
         f.write(html)
     return render(request, "encyclopedia/detail.html", {"html": html,"title":item})
-def edited(request,entry,edited):
-    print(edited)
-    print("="*30)
+def edited(request,entry):
+    print('='*30)
     print(entry)
     print("="*30)
-    util.save_entry(entry,edited)
+    print(edit)
+    print("="*30)
+    if request.method=='POST':
+        html=request.POST.get('edited')
+        print(html)
+
+    util.save_entry(entry,html)
     string = "E:\project-1-GRQ02200059\entries\\" + entry + ".md"
     input_file = open(string, mode="r", encoding="gbk")
     text = input_file.read()
@@ -76,7 +81,7 @@ def get_np(request):
         context=request.POST.get('context')
         print(entry,context)
         if entry in util.list_entries():
-            return render(request, "encyclopedia/detail.html", {"html":"词条已存在，请重新输入"})
+            return render(request, "encyclopedia/detail.html", {"html":"词条已存在，请重新输入","title":entry})
         util.save_entry(entry,context)
     # return render(request,"encyclopedia/create_np.html",{})
 
